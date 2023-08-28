@@ -1,5 +1,12 @@
 gpt = {
-    "openai_key": "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",
+    "debug": True,
+    "log": "info",
+
+    "openai_keys": [
+        # invalid
+        "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",
+        "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",
+    ],
     "model": "gpt-3.5-turbo",
     "temperature": 1.0,
     "api_base": "https://proxy.5aitool.com/v1",
