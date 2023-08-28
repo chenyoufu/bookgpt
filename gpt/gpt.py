@@ -6,12 +6,9 @@ import openai
 import time
 from rich import print
 
-import config
 
-openai.debug = config.gpt.get("debug")
-openai.log = config.gpt.get("log")
 class GPT(object):
-    def __init__(self, keys, model, prompt_user, prompt_system, temperature, api_base, proxy=None):
+    def __init__(self, keys, model, prompt_user, prompt_system, temperature, api_base, proxy=None, debug=False):
         self.model = model
 
         self.valid_keys_list = keys
@@ -27,6 +24,10 @@ class GPT(object):
 
         if api_base:
             openai.api_base = api_base
+
+        if debug:
+            openai.debug = debug
+            openai.log = "debug"
 
     def chat_with_retry(self, language, text, retry_count=3):
         while retry_count > 0:

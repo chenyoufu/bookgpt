@@ -1,11 +1,8 @@
 gpt = {
-    "debug": True,
-    "log": "info",
+    "debug": False,
 
     "openai_keys": [
-        # invalid
-        "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",
-        "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",
+        "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",
     ],
     "model": "gpt-3.5-turbo",
     "temperature": 1.0,
@@ -19,5 +16,6 @@ gpt = {
 }
 
 book = {
+    "test": True,
     "to_language": "zh-hans"
 }
